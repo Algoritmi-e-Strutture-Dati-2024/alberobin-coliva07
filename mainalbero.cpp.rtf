@@ -1,0 +1,37 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2818
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh15440\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 int main() \{\
+    AlberoBin<int> albero;\
+\
+    albero.inserisciRadice(3);\
+    cout << "Inserisco Radice: \\n";\
+    albero.mostraAlbero();\
+\
+    albero.aggiungiSinistro(0, 13);\
+    albero.aggiungiDestro(0, 27);\
+    albero.aggiungiSinistro(1, 54);\
+\
+    cout << "\\nAlbero dopo aver inserito i figli:\\n";\
+    albero.mostraAlbero();\
+\
+    int nodoCorrente = 0;\
+    int sinistro = albero.indiceSinistro(nodoCorrente);\
+    int destro = albero.indiceDestro(nodoCorrente);\
+\
+    cout << "\\nNodo " << nodoCorrente << " (" << albero.leggiRadice() << ") ha:" << endl;\
+    cout << "Figlio sinistro: " << (sinistro != -1 ? sinistro : -1) << endl;\
+    cout << "Figlio destro: " << (destro != -1 ? destro : -1) << endl;\
+\
+    albero.eliminaNodo(3);\
+    cout << "\\nRimuove il nodo 4: \\n";\
+    albero.mostraAlbero();\
+\
+    return 0;\
+\}\
+\
+}
